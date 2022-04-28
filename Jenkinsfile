@@ -36,12 +36,14 @@ spec:
   stages {
     stage('Configure') {
       steps {
-         sh 'docker login -u admin -p Harbor12345 core.harbor.domain'
+         echo "hello, starting"
       }
     }
     stage('image build and push') {
       steps {
         container('kaniko') {
+          Local = `pwd`
+          echo "${Local}"
           sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd`/src --cache=true \
           --destination=core.harbor.domain/httpservice/httpserver:${DATED_GIT_HASH} \
                   --insecure \
