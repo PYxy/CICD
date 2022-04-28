@@ -36,7 +36,7 @@ spec:
   stages {
     stage('Configure') {
       steps {
-        echo "hello, starting"
+         sh 'docker login -u admin -p Harbor12345 core.harbor.domain'
       }
     }
     stage('image build and push') {
