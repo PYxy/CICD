@@ -41,7 +41,7 @@ import java.text.SimpleDateFormat;
 	    stage('Build with Kaniko') {
 	      steps {
 	        container('kaniko') {
-            sh 'sleep 300'
+                  sh 'sleep 300'
             
 	          sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd`/src --cache=true \
 	          --destination=core.harbor.domain/httpservice/httpserver:${DATED_GIT_HASH} \
