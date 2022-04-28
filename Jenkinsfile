@@ -42,8 +42,7 @@ spec:
     stage('image build and push') {
       steps {
         container('kaniko') {
-          Local = `pwd`
-          echo "${Local}"
+          sh 'sleep 600'
           sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd`/src --cache=true \
           --destination=core.harbor.domain/httpservice/httpserver:${DATED_GIT_HASH} \
                   --insecure \
