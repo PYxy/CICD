@@ -36,7 +36,7 @@ spec:
   stages {
     stage('Configure') {
       steps {
-         echo "hello, starting11122"
+         echo "hello, starting11134534522"
       }
     }
     stage('image build and push') {
